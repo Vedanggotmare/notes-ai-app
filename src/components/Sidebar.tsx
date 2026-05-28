@@ -20,6 +20,7 @@ const VIEW_TABS: { mode: ViewMode; icon: string; label: string }[] = [
   { mode: 'notes', icon: '≡', label: 'Notes' },
   { mode: 'graph', icon: '✦', label: 'Graph' },
   { mode: 'todo',  icon: '◉', label: 'Tasks' },
+  { mode: 'flow',  icon: '◇', label: 'Flow' },
 ]
 
 const PRESET_COLORS = [

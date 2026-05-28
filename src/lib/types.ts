@@ -52,7 +52,38 @@ export interface GraphData {
   links: GraphLink[]
 }
 
-export type ViewMode = 'notes' | 'graph' | 'todo'
+export type ViewMode = 'notes' | 'graph' | 'todo' | 'flow'
+
+export type FlowShapeType = 'rect' | 'rounded' | 'diamond' | 'circle' | 'text'
+
+export interface FlowNode {
+  id: string
+  type: FlowShapeType
+  x: number
+  y: number
+  width: number
+  height: number
+  label: string
+  fill: string
+  stroke: string
+}
+
+export interface FlowEdge {
+  id: string
+  from: string
+  to: string
+  label: string
+  color: string
+}
+
+export interface Flowchart {
+  id: string
+  name: string
+  nodes: FlowNode[]
+  edges: FlowEdge[]
+  createdAt: string
+  updatedAt: string
+}
 
 export interface TodoItem {
   id: string
