@@ -1,4 +1,4 @@
-import type { Note, Notebook, Category } from './types'
+import type { Note, Notebook, Category, Flowchart } from './types'
 import { SEED_NOTES } from './seeds'
 
 const NOTES_KEY = 'notes_ai_notes'
@@ -109,4 +109,29 @@ export function deleteNotebook(id: string): void {
 export function deleteCategory(id: string): void {
   const list = getCategories().filter(c => c.id !== id)
   localStorage.setItem(CATEGORIES_KEY, JSON.stringify(list))
+}
+
+// ── Flowcharts ───────────────────────────────────────────────────────────────
+const FLOWCHARTS_KEY = 'notes_ai_flowcharts'
+
+export function getFlowcharts(): Flowchart[] {
+  try {
+    const data = localStorage.getItem(FLOWCHARTS_KEY)
+    return data ? JSON.parse(data) : []
+  } catch {
+    return []
+  }
+}
+
+export function saveFlowchart(fc: Flowchart): void {
+  const list = getFlowcharts()
+  const idx = list.findIndex(f => f.id === fc.id)
+  if (idx >= 0) list[idx] = fc
+  else list.push(fc)
+  localStorage.setItem(FLOWCHARTS_KEY, JSON.stringify(list))
+}
+
+export function deleteFlowchart(id: string): void {
+  const list = getFlowcharts().filter(f => f.id !== id)
+  localStorage.setItem(FLOWCHARTS_KEY, JSON.stringify(list))
 }

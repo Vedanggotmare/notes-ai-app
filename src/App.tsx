@@ -4,6 +4,7 @@ import { NoteList }       from './components/NoteList'
 import { NoteEditor }     from './components/NoteEditor'
 import { KnowledgeGraph } from './components/KnowledgeGraph'
 import { TodoPanel }      from './components/TodoPanel'
+import { FlowCanvas }     from './components/FlowCanvas'
 import { PomodoroTimer }  from './components/PomodoroTimer'
 import { useNotes }       from './hooks/useNotes'
 import type { ViewMode }  from './lib/types'
@@ -64,6 +65,8 @@ export default function App() {
           />
         ) : viewMode === 'todo' ? (
           <TodoPanel />
+        ) : viewMode === 'flow' ? (
+          <FlowCanvas />
         ) : (
           <>
             <NoteList
