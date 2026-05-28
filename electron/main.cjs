@@ -11,6 +11,7 @@ const distIndex = path.join(__dirname, '../dist/index.html')
 const isProd = fs.existsSync(distIndex)
 
 function createWindow() {
+  const iconPath = path.join(__dirname, '../build/icon.png')
   const win = new BrowserWindow({
     width: 1400,
     height: 900,
@@ -25,6 +26,7 @@ function createWindow() {
     titleBarStyle: process.platform === 'darwin' ? 'hiddenInset' : 'default',
     show: false,
     title: 'Notes AI',
+    icon: fs.existsSync(iconPath) ? iconPath : undefined,
   })
 
   // ── Grant microphone + media permissions automatically ──────────────────
