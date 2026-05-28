@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #15110D;
+    color: #EAE0D4;
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #3A3028; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #5A4A38; }
+
+  /* Note editor uses serif */
+  .note-content, .note-title {
+    font-family: 'Lora', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Subtle warm glow on active elements */
+  .claude-glow {
+    box-shadow: 0 0 0 1px rgba(217, 119, 87, 0.3);
+  }
+}
