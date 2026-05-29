@@ -286,6 +286,10 @@ export function Sidebar({
         <span className="flex-1 text-sm font-semibold tracking-wide"
           style={{ fontFamily: 'Lora, Georgia, serif', color: '#EAE0D4', letterSpacing: '0.04em' }}>
           Notes AI
+          <span className="ml-1.5 text-[10px] font-normal px-1.5 py-0.5 rounded-full"
+            style={{ background: '#3A3028', color: '#9A8878', letterSpacing: '0.02em', verticalAlign: 'middle' }}>
+            v1.0.0
+          </span>
         </span>
         <button onClick={() => setCollapsed(true)}
           className="w-6 h-6 rounded flex items-center justify-center text-xs transition-colors"
